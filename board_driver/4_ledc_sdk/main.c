@@ -128,10 +128,10 @@ int main(void)
 	while(1)			/* 死循环 				*/
 	{	
 		led_off();		/* 关闭LED 			*/
-		delay(500);		/* 延时500ms 			*/
+		delay(1000);		/* 延时500ms 			*/
 
 		led_on();		/* 打开LED 			*/
-		delay(500);		/* 延时500ms 			*/
+		delay(1000);		/* 延时500ms 			*/
 	}
 
 	return 0;
