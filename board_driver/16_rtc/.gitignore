@@ -1,0 +1,5 @@
+/obj/
+*.bin
+*.dis
+*.elf
+load.imx
