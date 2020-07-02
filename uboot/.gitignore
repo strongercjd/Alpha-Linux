@@ -5,6 +5,8 @@
 #
 # Normal rules
 #
+!imxdownload
+!.vscode/*
 .*
 *.o
 *.o.*
