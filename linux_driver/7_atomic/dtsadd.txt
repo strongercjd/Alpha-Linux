@@ -1,0 +1,30 @@
+/*根节点添加*/
+/*GPIO pinctl设备树*/
+gpioled{
+    compatible = "alientek,gpioled";
+    pinctrl-names = "default";
+    pinctrl-0 = <&pinctrl_gpioled>;
+    led-gpio = <&gpio1 3 GPIO_ACTIVE_LOW>;
+    status = "okay";
+};
+
+
+
+
+/*iomuxc的imx6ul-evk节点添加*/
+pinctrl_gpioled: ledgrp{
+    fsl,pins = <
+        MX6UL_PAD_GPIO1_IO03__GPIO1_IO03  	0x10b0
+    >;
+};
+
+
+/*解决其他外设占用IO的问题*/
+搜索MX6UL_PAD_GPIO1_IO03__GPIO1_IO03
+屏蔽pinctrl_tsc: tscgrp的配置
+MX6UL_PAD_GPIO1_IO03__GPIO1_IO03	0xb0
+
+
+这样查到了复用设置，接下来还要屏蔽GPIO使用操作
+屏蔽tsc下的
+xnur-gpio = <&gpio1 3 GPIO_ACTIVE_LOW>;
