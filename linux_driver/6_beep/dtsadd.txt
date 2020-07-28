@@ -1,0 +1,20 @@
+/*根节点添加*/
+/*GPIO pinctl设备树*/
+beep{
+    compatible = "alientek,beep";
+    pinctrl-names = "default";
+    pinctrl-0 = <&pinctrl_beep>;
+    led-gpio = <&gpio5 1 GPIO_ACTIVE_HIGH>;
+    status = "okay";
+};
+
+
+
+
+/*iomuxc的imx6ul-evk节点添加*/
+pinctrl_beep: beepgrp{
+    fsl,pins = <
+        MX6ULL_PAD_SNVS_TAMPERR1_GPIO5_IO01  	0x10b0
+    >;
+};
+
