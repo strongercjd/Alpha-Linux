@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
 {
 	int fd;
 	int ret = 0;
-	int data = 0;
 	char *filename;
 	unsigned char data;
 	

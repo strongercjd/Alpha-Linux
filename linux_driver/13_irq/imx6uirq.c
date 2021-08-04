@@ -112,7 +112,7 @@ static int keyio_init(void)
 	unsigned char i = 0;
 	int ret = 0;
 	
-	imx6uirq.nd = of_find_node_by_path("/key");
+	imx6uirq.nd = of_find_node_by_path("/keyled");
 	if (imx6uirq.nd== NULL){
 		printk("key node not find!\r\n");
 		return -EINVAL;
