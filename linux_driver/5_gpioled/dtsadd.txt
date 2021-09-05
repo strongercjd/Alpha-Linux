@@ -1,5 +1,4 @@
 /*根节点添加*/
-/*GPIO pinctl设备树*/
 gpioled{
     compatible = "alientek,gpioled";
     pinctrl-names = "default";
@@ -12,6 +11,7 @@ gpioled{
 
 
 /*iomuxc的imx6ul-evk节点添加*/
+/*GPIO pinctl设备树*/
 pinctrl_gpioled: ledgrp{
     fsl,pins = <
         MX6UL_PAD_GPIO1_IO03__GPIO1_IO03  	0x10b0
