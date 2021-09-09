@@ -14,7 +14,7 @@ beep{
 /*iomuxc的imx6ul-evk节点添加*/
 pinctrl_beep: beepgrp{
     fsl,pins = <
-        MX6ULL_PAD_SNVS_TAMPERR1_GPIO5_IO01  	0x10b0
+        MX6ULL_PAD_SNVS_TAMPER1__GPIO5_IO01  	0x10b0
     >;
 };
 
