@@ -534,6 +534,13 @@ config LEDS_PM8941_WLED
 	  This option enables support for the 'White' LED block
 	  on Qualcomm PM8941 PMICs.
 
+config LEDS_Driver
+        tristate "LED Drivre"
+        depends on LEDS_CLASS
+        select REGMAP
+        help
+          This option enables support for the test.
+
 comment "LED Triggers"
 source "drivers/leds/trigger/Kconfig"
 

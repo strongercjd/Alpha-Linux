@@ -1274,7 +1274,7 @@ CONFIG_PHYLIB=y
 # CONFIG_LXT_PHY is not set
 # CONFIG_CICADA_PHY is not set
 # CONFIG_VITESSE_PHY is not set
-CONFIG_SMSC_PHY=y
+# CONFIG_SMSC_PHY is not set
 # CONFIG_BROADCOM_PHY is not set
 # CONFIG_BCM7XXX_PHY is not set
 # CONFIG_BCM87XX_PHY is not set
@@ -3146,6 +3146,7 @@ CONFIG_LEDS_GPIO=y
 # CONFIG_LEDS_BLINKM is not set
 # CONFIG_LEDS_SYSCON is not set
 # CONFIG_LEDS_PM8941_WLED is not set
+CONFIG_LEDS_Driver=y
 
 #
 # LED Triggers
