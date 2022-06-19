@@ -1,0 +1,5 @@
+/*在i2c1节点下增加ap3216c子节点*/
+ap3216c@1e {//ap3216c,1e是器件地址
+	compatible = "alientek,ap3216c";
+	reg = <0x1e>;//器件地址
+};

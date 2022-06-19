@@ -90,6 +90,7 @@
         "arch/arm/boot/dts/imx6q*":true,
         "arch/arm/boot/dts/imx6s*":true,
         "arch/arm/boot/dts/imx6ul-*":true,
+        "arch/arm/boot/dts/.*":true,
         "arch/arm/boot/dts/imx6ull-9x9*":true,
         "arch/arm/boot/dts/imx6ull-14x14-ddr*":true,
     }
