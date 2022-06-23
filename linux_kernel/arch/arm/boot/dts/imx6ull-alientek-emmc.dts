@@ -289,6 +289,22 @@
 	pinctrl-0 = <&pinctrl_hog_1>;
 	imx6ul-evk {
 
+		pinctrl_uart3: uart3grp {
+			fsl,pins = <
+				MX6UL_PAD_UART3_TX_DATA__UART3_DCE_TX 0X1b0b1
+				MX6UL_PAD_UART3_RX_DATA__UART3_DCE_RX 0X1b0b1
+			>;
+		};
+
+		pinctrl_ecspi3: icm20608 {
+			fsl,pins = <
+				MX6UL_PAD_UART2_TX_DATA__GPIO1_IO20 0x10b0 /* CS */
+				MX6UL_PAD_UART2_RX_DATA__ECSPI3_SCLK 0x10b1 /* SCLK */
+				MX6UL_PAD_UART2_RTS_B__ECSPI3_MISO 0x10b1 /* MISO */
+				MX6UL_PAD_UART2_CTS_B__ECSPI3_MOSI 0x10b1 /* MOSI */
+			>;
+		};
+
 		/*GPIO pinctl设备树*/
 		pinctrl_gpioled: ledgrp{
 			fsl,pins = <
@@ -720,13 +736,9 @@
 	status = "okay";
 };
 
-&uart2 {
+&uart3 {
 	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_uart2>;
-	fsl,uart-has-rtscts;
-	/* for DTE mode, add below change */
-	/* fsl,dte-mode; */
-	/* pinctrl-0 = <&pinctrl_uart2dte>; */
+	pinctrl-0 = <&pinctrl_uart3>;
 	status = "okay";
 };
 
@@ -778,4 +790,19 @@
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_wdog>;
 	fsl,wdog_b;
+};
+
+
+&ecspi3 {
+	fsl,spi-num-chipselects = <1>;//设置片选个数为1,
+	cs-gpios = <&gpio1 20 GPIO_ACTIVE_LOW>;//描述片选cs的引脚信息
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_ecspi3>;//pinctrl信息
+	status = "okay";
+
+	spidev: icm20608@0 {//cm20608 设备子节点，因为 icm20608 连接在 ECSPI3 的第 0 个通道上，因此@后面为 0
+	    compatible = "alientek,icm20608";//匹配设备的名字
+	    spi-max-frequency = <8000000>;//设备最大频率
+		reg = <0>;//和第8行原因一致
+	};
 };
